@@ -22,3 +22,6 @@ Used a configured network to ensure the containers communicate to each other
 ### Running the application
 
 To run the YOLO application using Docker Compose, follow these instructions: - Fork the repository at https://github.com/dancunkip/yolo - Clone the repository to your local machine using the command git clone https://github.com/[your-username]/yolo.git - Change into the yolo directory using the command cd yolo - Build the Docker images and start the containers by running sudo docker-compose up --build - The backend will be running on port 5000 and the frontend will be running on port 3000. You can access the application in your web browser at http://localhost:3000
+
+### Bugs
+THere are no know bugs
