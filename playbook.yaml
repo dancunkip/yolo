@@ -1,0 +1,10 @@
+---
+- name: yolo playbook 
+- hosts: all
+  become: true
+
+  roles: 
+   - clone-dependencies
+   - client
+   - backend
+   - server_set_up
