@@ -78,5 +78,44 @@ services:
       
         
 ```
+## Ansible Congigutation 
+ It contains default settings for Ansible, \remote user, private key file, and host key :
+```
+[defaults]
+inventory = hosts
+remote_user = vagrant
+private_key_file = .vagrant/machines/default/virtualbox/private_key
+host_key_checking = False
 
-## 
+```
+
+
+## Docker Configuration Backend
+
+```
+FROM node:13-alpine
+WORKDIR /backend
+COPY package*.json .
+RUN npm install
+COPY .  .
+EXPOSE 5000
+CMD ["npm", "start"]
+
+```
+## Client Docker Configuration
+
+```
+FROM node:13-alpine
+WORKDIR /client
+COPY package*.json ./
+RUN npm install
+COPY .  .
+EXPOSE 3000
+CMD ["npm", "start"]
+
+```
+
+## Eplanation / Exceution Order
+
+Configurations of the eccommerce interface on vm , with playbook to run and  handle defined configurations/ variables.
+The project is then cloned from the GitHub repository. After the process , the Docker files  will be executed to install and configure Docker and Docker Compose on the hosts. The Ansible roles are the  executed to achieve the desired configuration for the project.
