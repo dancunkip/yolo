@@ -1,0 +1,4 @@
+---
+# vars file for client
+gitrepo_url: https://github.com/dancunkip/yolo.git
+dest_folder: /home/vagrant/yolo

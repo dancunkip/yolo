@@ -1,0 +1,20 @@
+---
+# tasks file for client
+- name: Clone yolo Application Git repository
+  git:
+    repo: "{{ gitrepo_url }}"
+    dest: "{{ dest_folder }}"
+    version: master
+    update: yes
+  tags: git
+
+  - name: Install Docker and Docker Compose
+    apt:
+      name: ['docker.io', 'docker-compose']
+      state: present
+
+  - name: Ensure the client container is running.
+    docker_container:
+      image: client:latest
+      name: client
+      state: started
